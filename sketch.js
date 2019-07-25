@@ -5,6 +5,8 @@ var GRAVITY = 0.3;
 
 function setup() {
   createCanvas(800, 400);
+  
+  Access-Control-Allow-Credentials: true;
 
   spaceshipImage = loadImage('spaceship.png');
   astroidsImage = loadImage('meteorite.png');
