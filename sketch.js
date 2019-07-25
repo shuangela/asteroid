@@ -6,8 +6,8 @@ var GRAVITY = 0.3;
 function setup() {
   createCanvas(800, 400);
 
-  spaceshipImage = loadImage('https://imgur.com/PUIXzs3');
-  astroidsImage = loadImage('https://imgur.com/cEZZLFv');
+  spaceshipImage = loadImage('spaceship.png');
+  astroidsImage = loadImage('meteroid.png');
 
   spaceship = createSprite();
   spaceship.rotateToDirection = true;
