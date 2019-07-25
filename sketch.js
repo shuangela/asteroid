@@ -7,7 +7,7 @@ function setup() {
   createCanvas(800, 400);
 
   spaceshipImage = loadImage('spaceship.png');
-  astroidsImage = loadImage('meteroid.png');
+  astroidsImage = loadImage('meteorite.png');
 
   spaceship = createSprite();
   spaceship.rotateToDirection = true;
@@ -36,7 +36,7 @@ function draw() {
 
 function createAstroid(type, x, y) {
   var a = createSprite(x, y);
-  var img = loadImage('meteroid.png');
+  var img = loadImage('meteorite.png');
   a.addImage(img);
   a.setSpeed(2.5-(type/2), random(360));
   a.rotationSpeed = 0.5;
