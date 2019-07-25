@@ -36,7 +36,7 @@ function draw() {
 
 function createAstroid(type, x, y) {
   var a = createSprite(x, y);
-  var img = loadImage('https://imgur.com/cEZZLFv');
+  var img = loadImage('meteroid.png');
   a.addImage(img);
   a.setSpeed(2.5-(type/2), random(360));
   a.rotationSpeed = 0.5;
