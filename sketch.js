@@ -1,57 +1,141 @@
 var spaceship;
-var astroids;
+var astroid;
 var spaceshipImage, astroidsImage;
-var GRAVITY = 0.3;
+
+var SCORE = 0;
+var gameOver;
+var UP = 1
+var DOWN = -1
+
 
 function setup() {
   createCanvas(800, 400);
-  
-  Access-Control-Allow-Credentials: true;
 
-  spaceshipImage = loadImage('spaceship.png');
-  astroidsImage = loadImage('meteorite.png');
 
-  spaceship = createSprite();
-  spaceship.rotateToDirection = true;
-  spaceship.velocity.x = 4;
-  spaceship.setCollider('circle', 0, 0, 20);
-  spaceship.maxSpeed = 10;
+
+
+  spaceshipImage = loadImage('https://i.imgur.com/hNCQhFo.png');
+  astroidsImage = loadImage('https://i.imgur.com/cEZZLFv.png');
+
+   spaceship = createSprite(width/2, height/2, 40, 40);
+  // spaceship.rotateToDirection = true;
+  // spaceship.velocity.x = 4;
+  // spaceship.setCollider('circle', 0, 0, 20);
+  // spaceship.maxSpeed = 10;
   spaceship.addImage('normal', spaceshipImage);
+  //
+   astroids = new Group();
 
-  astroids = new Group();
+  //
+   gameOver = true;
+  //  updateSprites(false);
+  //
+  camera.position.y = height/2;
 
-
-  for(var i = 0; i<8; i++) {
-    var ang = random(360);
-    var px = width/2 + 1000 * cos(radians(ang));
-    var py = height/2+ 1000 * sin(radians(ang));
-    createAstroid(3, px, py);
-  }
+  // for(var i = 0; i<8; i++) {
+  //   var ang = random(360);
+  //   var px = width/2 + 1000 * cos(radians(ang));
+  //   var py = height/2+ 1000 * sin(radians(ang));
+  //   createAstroid(3, px, py);
+  //   createAstroid(1, px, py);
+  //   createAstroid(2, px, py);
+  //}
 }
 
 function draw() {
   background("#003366");
   fill("#ffffff");
   textAlign(CENTER);
-  text('Controls: Arrow Keys', width/2, 20);
+  text('Controls: Up and Down Arrow Keys', width/3, 20);
+  text('Asteroids Hit: ' + SCORE, width/10, 20 );
+
+
+  if(gameOver) {
+    newGame();
+  }
+
+  if(!gameOver) {
+    if(keyDown('38'))
+      spaceship.velocity.y += UP;
+    if(keyDown('40'))
+      spaceship.velocity.y += DOWN;
+    if (spaceship.overlap(asteroids, disappear())) {
+      score();
+    }
+  }
+
+
+  // get rid of passed asteroids
+
+  for(var i = 0; i<astroids.length; i++) {
+    if(astroids[i].position.x < spaceship.position.x-width/2){
+      astroids[i].remove();
+
+    }
+  }
+
+  if(frameCount%60 == 0) {
+      var astroidH = random(50, 300);
+      var astroid1 = createSprite(spaceship.position.x + width, astroidH/2+1+100, 80, astroidH);
+      astroid1.addImage(astroidsImg);
+      astroids.add(astroid1);
+  }
+
+
+     camera.position.x = spaceship.position.x + width/4;
+
+
+    drawSprite(spaceship);
+    for(var i = 0; i<5; i++) {
+      createAstroid();
+    }
+
 }
 
-function createAstroid(type, x, y) {
-  var a = createSprite(x, y);
-  var img = loadImage('meteorite.png');
+function createAstroid() {
+  var a = createSprite(width/2, height/2, 40, 40);
+  var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   a.addImage(img);
-  a.setSpeed(2.5-(type/2), random(360));
-  a.rotationSpeed = 0.5;
+  astroid.addtoGroup(astroids);
+  drawSprite(astroid);
+  //a.setSpeed(2.5-(type/2), random(360));
+  //a.rotationSpeed = 0.5;
   //a.debug = true;
-  a.type = type;
+  // a.type = type;
+  //
+  // if(type == 2)
+  //   a.scale = 0.6;
+  // if(type == 1)
+  //   a.scale = 0.3;
+  //
+  // a.mass = 2+a.scale;
+  // a.setCollider('circle', 0, 0, 50);
+  // astroids.add(a);
+  // return a;
 
-  if(type == 2)
-    a.scale = 0.6;
-  if(type == 1)
-    a.scale = 0.3;
 
-  a.mass = 2+a.scale;
-  a.setCollider('circle', 0, 0, 50);
-  astroids.add(a);
-  return a;
+
 }
+
+function score() {
+  SCORE = SCORE+1
+}
+
+function newGame() {
+  astroids.removeSprites();
+  gameOver = false;
+  updateSprites(true);
+  spaceship.position.x = width/2;
+  spaceship.position.y = height/2;
+  spaceship.velocity.y = 0;
+
+}
+
+function disappear() {
+  for(var i = 0; i<astroids.length; i++) {
+        if(astroids[i] = asteroid){
+          astroids[i].remove();
+        }
+  }
+}
+
