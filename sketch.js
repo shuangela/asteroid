@@ -23,8 +23,8 @@ function setup() {
   // spaceship.velocity.x = 4;
   // spaceship.setCollider('circle', 0, 0, 20);
   // spaceship.maxSpeed = 10;
-  spaceship.addImage('normal', spaceshipImage);
-  astroid.addImage('normal', astroidsImage);
+  spaceship.addImage(spaceshipImage);
+  astroid.addImage(astroidsImage);
   //
    astroids = new Group();
 
