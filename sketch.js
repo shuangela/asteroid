@@ -58,14 +58,14 @@ function draw() {
 
   if(!gameOver) {
     if(keyDown(38)) {
-      spaceship.position.y += UP;
+      spaceship.position.y -= UP;
       
     
     } else if(keyDown(40)) {
-      spaceship.position.y -= DOWN;
+      spaceship.position.y += DOWN;
     
     } else {
-      spaceship.velocity.y = 0;
+      spaceship.position.y += 0;
     
     
     } if (spaceship.overlap(astroids, disappear())) {
