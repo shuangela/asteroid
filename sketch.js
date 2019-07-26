@@ -36,7 +36,7 @@ function setup() {
   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   astroid.addImage(img);
   astroids.add(astroid);
-  
+  }
 
   //
    gameOver = true;
