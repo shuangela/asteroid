@@ -15,7 +15,7 @@ function setup() {
 
 
   spaceshipImage = loadImage('https://i.imgur.com/hNCQhFo.png');
-//   astroidsImage = loadImage('https://i.imgur.com/cEZZLFv.png');
+//astroidsImage = loadImage('https://i.imgur.com/cEZZLFv.png');
 
    spaceship = createSprite(width/2, height/2, 40, 40);
 //   astroid = createSprite(width/2, height/2, 40, 40);
@@ -97,6 +97,7 @@ function draw() {
     drawSprite(astroid);
     for(var i = 0; i<5; i++) {
       createAstroid();
+      astroid = drawSprite(a)
     }
 
 }
@@ -108,7 +109,8 @@ function createAstroid() {
   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   a.addImage(img);
   astroids.addToGroup(a);
-  drawSprite(a);
+  return a;
+  //drawSprite(a);
   //a.setSpeed(2.5-(type/2), random(360));
   //a.rotationSpeed = 0.5;
   //a.debug = true;
