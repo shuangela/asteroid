@@ -90,10 +90,12 @@ function draw() {
       score();
    disappear();
     }
-  }
-if (SCORE == 5) {
+   
+   if (SCORE == 5) {
  gameOver();
 }
+  }
+
 
   // get rid of passed asteroids
 
