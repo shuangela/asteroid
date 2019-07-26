@@ -160,7 +160,7 @@ function newGame() {
   spaceship.position.y = height/2;
   for (var i = 0; i < 5; i++) {
     let astroidH = random(0, 600);
-  let astroidX = random(0, 1200);
+  let astroidX = random(600, 1200);
 
     astroid = createSprite(astroidX, astroidH, 75, 75);
     
