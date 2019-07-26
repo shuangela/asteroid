@@ -131,9 +131,9 @@ function newGame() {
   spaceship.position.y = height/2;
   spaceship.velocity.y = 1;
   
-  astroids.position.x = width/4;
+  astroid.position.x = width/4;
   
-  astroids.position.y = height/4;
+  astroid.position.y = height/4;
   
 
 }
