@@ -89,12 +89,12 @@ function draw() {
 
   // get rid of passed asteroids
 
-//   for(var i = 0; i<astroids.length; i++) {
-//     if(astroids[i].position.x < spaceship.position.x-width/2){
-//       astroids[i].remove();
+   for(var i = 0; i<astroids.length; i++) {
+     if(astroids[i].position.x < -30){
+       astroids[i].remove();
 
-//     }
-//   }
+     }
+   }
 
 //   if(!) {
 //       var astroidH = random(50, 300);
