@@ -1,5 +1,5 @@
 var spaceship;
-// var astroid;
+ var astroid;
 var spaceshipImage, astroidsImage;
 
 var SCORE = 0;
@@ -82,7 +82,7 @@ function draw() {
     
     } if (spaceship.overlap(astroids)) {
       score();
-//       disappear();
+   disappear();
     }
   }
 
@@ -162,12 +162,13 @@ function newGame() {
     let astroidH = random(0, 600);
   let astroidX = random(0, 1200);
 
-   let astroid = createSprite(astroidX, astroidH, 75, 75);
+    astroid = createSprite(astroidX, astroidH, 75, 75);
     
 //   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   astroid.addImage(astroidsImage);
   astroids.add(astroid);
   }
+  astroids.velocity.x(4);
   
 //   astroid.position.x = width/4;
   
@@ -176,11 +177,13 @@ function newGame() {
 
 }
 
-// function disappear() {
-//   for(var i = 0; i<astroids.length; i++) {
-//         if(astroids[i] = astroid){
-//           astroids[i].remove();
-//         }
-//   }
-// }
+function disappear() {
+  for(var i = 0; i<astroids.length; i++) {
+        if(spaceship.overlap(astroids[i])){
+          
+            
+         astroids[i].remove();
+        }
+   }
+}
 
