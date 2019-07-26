@@ -94,10 +94,10 @@ function draw() {
      camera.position.x = spaceship.position.x + width/4;
 
 
-    drawSprite(astroid);
+    
     for(var i = 0; i<5; i++) {
       createAstroid();
-      astroid = drawSprite(a)
+      drawSprite(astroid);
     }
   
  drawSprite(spaceship);
@@ -154,7 +154,7 @@ function newGame() {
 
 function disappear() {
   for(var i = 0; i<astroids.length; i++) {
-        if(astroids[i] = a){
+        if(astroids[i] = astroid){
           astroids[i].remove();
         }
   }
