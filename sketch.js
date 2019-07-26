@@ -9,7 +9,7 @@ var DOWN = 1;
 
 
 function setup() {
-  createCanvas(800, 400);
+  createCanvas(1200, 600);
 
 
 
