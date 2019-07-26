@@ -96,7 +96,7 @@ function createAstroid() {
   var a = createSprite(width/2, height/2, 40, 40);
   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   a.addImage(img);
-  astroid.addtoGroup(astroids);
+  astroid.addToGroup(astroids);
   drawSprite(astroid);
   //a.setSpeed(2.5-(type/2), random(360));
   //a.rotationSpeed = 0.5;
