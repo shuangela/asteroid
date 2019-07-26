@@ -27,6 +27,16 @@ function setup() {
   //astroid.addImage(astroidsImage);
   //
    astroids = new Group();
+  
+  for (var i = 0; i < 5; i++) {
+    astroid = createSprite(astroidX, astroidH, 150, 150);
+    var astroidH = random(0, 600);
+  var astroidX = random(0, 1200);
+
+  var img = loadImage('https://i.imgur.com/cEZZLFv.png');
+  astroid.addImage(img);
+  astroids.add(astroid);
+  
 
   //
    gameOver = true;
@@ -68,8 +78,9 @@ function draw() {
       spaceship.position.y += 0;
     
     
-    } if (spaceship.overlap(astroids, disappear())) {
+    } if (spaceship.overlap(astroids)) {
       score();
+      disappear();
     }
   }
 
@@ -95,24 +106,24 @@ function draw() {
 
 
     
-    for(var i = 0; i<5; i++) {
-      createAstroid();
-      drawSprite(astroid);
-    }
+//     for(var i = 0; i<5; i++) {
+//       createAstroid();
+//       drawSprite(astroid);
+//     }
   
- drawSprite(spaceship);
+ drawSprites;
 
 }
 
 
-function createAstroid() {
-  var astroidH = random(0, 600)
-  var astroidX = random(0, 1200)
-  astroid = createSprite(astroidX, astroidH, 150, 150);
-  var img = loadImage('https://i.imgur.com/cEZZLFv.png');
-  astroid.addImage(img);
-  astroids.add(astroid);
-  return astroid;
+// function createAstroid() {
+//   var astroidH = random(0, 600)
+//   var astroidX = random(0, 1200)
+//   astroid = createSprite(astroidX, astroidH, 150, 150);
+//   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
+//   astroid.addImage(img);
+//   astroids.add(astroid);
+//   return astroid;
   //drawSprite(a);
   //a.setSpeed(2.5-(type/2), random(360));
   //a.rotationSpeed = 0.5;
