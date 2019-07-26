@@ -135,7 +135,7 @@ function newGame() {
 
 function disappear() {
   for(var i = 0; i<astroids.length; i++) {
-        if(astroids[i] = asteroid){
+        if(astroids[i] = astroid){
           astroids[i].remove();
         }
   }
