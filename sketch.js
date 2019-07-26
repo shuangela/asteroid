@@ -4,8 +4,8 @@ var spaceshipImage, astroidsImage;
 
 var SCORE = 0;
 var gameOver;
-var UP = 1
-var DOWN = 1
+var UP = 1;
+var DOWN = 1;
 
 
 function setup() {
@@ -127,7 +127,7 @@ function createAstroid() {
 }
 
 function score() {
-  SCORE = SCORE + 1
+  SCORE = SCORE + 1;
 }
 
 function newGame() {
