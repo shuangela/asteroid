@@ -4,8 +4,8 @@ var spaceshipImage, astroidsImage;
 
 var SCORE = 0;
 var gameOver;
-var UP = 50;
-var DOWN = 50;
+var UP = 15;
+var DOWN = 15;
 
 
 function setup() {
