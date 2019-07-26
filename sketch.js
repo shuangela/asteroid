@@ -58,11 +58,11 @@ function draw() {
 
   if(!gameOver) {
     if(keyDown(38)) {
-      spaceship.velocity.y += UP;
+      spaceship.position.y += UP;
       
     
     } else if(keyDown(40)) {
-      spaceship.velocity.y -= DOWN;
+      spaceship.position.y -= DOWN;
     
     } else {
       spaceship.velocity.y = 0;
