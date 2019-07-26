@@ -30,7 +30,7 @@ function setup() {
 
   //
    gameOver = true;
-  //  updateSprites(false);
+  updateSprites(false);
   //
   //camera.position.y = height/2;
 
