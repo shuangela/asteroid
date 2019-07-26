@@ -90,9 +90,13 @@ function draw() {
     
     } if (spaceship.overlap(astroids)) {
       score();
+      for(var i = 0; i<astroids.length; i++) {
+       if(spaceship.overlap(astroids[i])) {
      astroids[i].position.x = 1260;
       astroids[i].position.y = random(0, 600);
 //    disappear();
+       }
+      }
     }
    
    if (SCORE == 5) {
