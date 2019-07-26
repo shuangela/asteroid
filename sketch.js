@@ -163,12 +163,13 @@ function newGame() {
   let astroidX = random(600, 1200);
 
     astroid = createSprite(astroidX, astroidH, 75, 75);
+   astroid.velocity.x = 4;
     
 //   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   astroid.addImage(astroidsImage);
   astroids.add(astroid);
   }
-  astroids.velocity.x = 4;
+  
   
 //   astroid.position.x = width/4;
   
