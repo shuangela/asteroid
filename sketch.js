@@ -57,17 +57,18 @@ function draw() {
   }
 
   if(!gameOver) {
-    if(keyDown(38)) 
+    if(keyDown(38)) {
       spaceship.velocity.y += UP;
+      
     
-    else if(keyDown(40)) 
+    } else if(keyDown(40)) {
       spaceship.velocity.y -= DOWN;
     
-    else {
+    } else {
       spaceship.velocity.y = 0;
-    }
     
-    if (spaceship.overlap(astroids, disappear())) {
+    
+    } if (spaceship.overlap(astroids, disappear())) {
       score();
     }
   }
@@ -126,7 +127,7 @@ function createAstroid() {
 }
 
 function score() {
-  SCORE = SCORE+1
+  SCORE = SCORE + 1
 }
 
 function newGame() {
