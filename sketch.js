@@ -129,7 +129,12 @@ function newGame() {
   updateSprites(true);
   spaceship.position.x = width/2;
   spaceship.position.y = height/2;
-  spaceship.velocity.y = 0;
+  spaceship.velocity.y = 1;
+  
+  astroids.position.x = width/4;
+  
+  astroids.position.y = height/4;
+  
 
 }
 
