@@ -15,10 +15,10 @@ function setup() {
 
 
   spaceshipImage = loadImage('https://i.imgur.com/hNCQhFo.png');
-  astroidsImage = loadImage('https://i.imgur.com/cEZZLFv.png');
+//   astroidsImage = loadImage('https://i.imgur.com/cEZZLFv.png');
 
    spaceship = createSprite(width/2, height/2, 40, 40);
-  astroid = createSprite(width/2, height/2, 40, 40);
+//   astroid = createSprite(width/2, height/2, 40, 40);
   // spaceship.rotateToDirection = true;
   // spaceship.velocity.x = 4;
   // spaceship.setCollider('circle', 0, 0, 20);
@@ -83,12 +83,12 @@ function draw() {
     }
   }
 
-  if(frameCount%60 == 0) {
-      var astroidH = random(50, 300);
-      var astroid1 = createSprite(spaceship.position.x + width, astroidH/2+1+100, 80, astroidH);
-      astroid1.addImage(astroidsImage);
-      astroids.add(astroid1);
-  }
+//   if(!) {
+//       var astroidH = random(50, 300);
+//       var astroid1 = createSprite(spaceship.position.x + width, astroidH/2+1+100, 80, astroidH);
+//       astroid1.addImage(astroidsImage);
+//       astroids.add(astroid1);
+//   }
 
 
      camera.position.x = spaceship.position.x + width/4;
@@ -102,11 +102,13 @@ function draw() {
 }
 
 function createAstroid() {
-  var a = createSprite(width/2, height/2, 40, 40);
+  var astroidH = random(0, 600)
+  var astroidX = random(0, 1200)
+  var a = createSprite(astroidX, astroidH, 150, 150);
   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   a.addImage(img);
-  astroid.addToGroup(astroids);
-  drawSprite(astroid);
+  astroids.addToGroup(a);
+  drawSprite(a);
   //a.setSpeed(2.5-(type/2), random(360));
   //a.rotationSpeed = 0.5;
   //a.debug = true;
@@ -138,16 +140,16 @@ function newGame() {
   spaceship.position.y = height/2;
   
   
-  astroid.position.x = width/4;
+//   astroid.position.x = width/4;
   
-  astroid.position.y = height/4;
+//   astroid.position.y = height/4;
   
 
 }
 
 function disappear() {
   for(var i = 0; i<astroids.length; i++) {
-        if(astroids[i] = astroid){
+        if(astroids[i] = a){
           astroids[i].remove();
         }
   }
