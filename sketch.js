@@ -65,7 +65,13 @@ function draw() {
 
 
   if(gameOver) {
-    newGame();
+   background("#000000");
+   fill("#ffffff");
+   textAlign(CENTER);
+   text('GAME OVER', width/30, 20 );
+   text(' Press "c" to try again');
+   if (keyWentDown(c)){
+     newGame();
   }
 
   if(!gameOver) {
@@ -85,7 +91,8 @@ function draw() {
    disappear();
     }
   }
-
+if score == 5;
+ gameOver();
 
   // get rid of passed asteroids
 
@@ -172,7 +179,13 @@ function newGame() {
   astroids.add(astroid);
   }
   
-  
+  background("#003366");
+  fill("#ffffff");
+  textAlign(CENTER);
+  text('Controls: Up and Down Arrow Keys', width/3, 20);
+  text('Asteroids Hit: ' + SCORE, width/10, 20 );
+
+
 //   astroid.position.x = width/4;
   
 //   astroid.position.y = height/4;
