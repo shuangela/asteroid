@@ -167,7 +167,7 @@ function newGame() {
     
 //   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   astroid.addImage(astroidsImage);
-   astroid.velocity.x = 4;
+   astroid.velocity.x = -4;
   astroids.add(astroid);
   }
   
