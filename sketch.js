@@ -29,10 +29,11 @@ function setup() {
    astroids = new Group();
   
   for (var i = 0; i < 5; i++) {
-    astroid = createSprite(astroidX, astroidH, 150, 150);
     var astroidH = random(0, 600);
   var astroidX = random(0, 1200);
 
+    astroid = createSprite(astroidX, astroidH, 75, 75);
+    
   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   astroid.addImage(img);
   astroids.add(astroid);
