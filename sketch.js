@@ -15,7 +15,7 @@ function setup() {
 
 
   spaceshipImage = loadImage('https://i.imgur.com/hNCQhFo.png');
-astroidsImage = loadImage('https://i.imgur.com/cEZZLFv.png');
+astroidsImage = loadImage('https://i.imgur.com/s18v4Ay.png');
 
    spaceship = createSprite(width/2, height/2, 40, 40);
 //   astroid = createSprite(width/2, height/2, 40, 40);
