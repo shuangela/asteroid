@@ -79,7 +79,7 @@ function draw() {
   if(frameCount%60 == 0) {
       var astroidH = random(50, 300);
       var astroid1 = createSprite(spaceship.position.x + width, astroidH/2+1+100, 80, astroidH);
-      astroid1.addImage(astroidsImg);
+      astroid1.addImage(astroidsImage);
       astroids.add(astroid1);
   }
 
