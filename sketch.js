@@ -24,7 +24,7 @@ function setup() {
   // spaceship.setCollider('circle', 0, 0, 20);
   // spaceship.maxSpeed = 10;
   spaceship.addImage(spaceshipImage);
-  astroid.addImage(astroidsImage);
+  //astroid.addImage(astroidsImage);
   //
    astroids = new Group();
 
