@@ -73,6 +73,8 @@ function draw() {
    if (keyWentDown(c)){
      newGame();
   }
+   
+  }
 
   if(!gameOver) {
     if(keyDown(38)) {
