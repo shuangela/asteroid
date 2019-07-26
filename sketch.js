@@ -29,7 +29,7 @@ function setup() {
    astroids = new Group();
 
   //
-   //gameOver = true;
+   gameOver = true;
   updateSprites(false);
   //
   //camera.position.y = height/2;
