@@ -144,7 +144,7 @@ function draw() {
 
 
 
-}
+// }
 
 function score() {
   SCORE = SCORE + 1;
