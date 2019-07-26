@@ -32,7 +32,7 @@ function setup() {
    gameOver = true;
   //  updateSprites(false);
   //
-  camera.position.y = height/2;
+  //camera.position.y = height/2;
 
   // for(var i = 0; i<8; i++) {
   //   var ang = random(360);
@@ -87,7 +87,7 @@ function draw() {
      camera.position.x = spaceship.position.x + width/4;
 
 
-    drawSprite(spaceship);
+    drawSprite(astroid);
     for(var i = 0; i<5; i++) {
       createAstroid();
     }
