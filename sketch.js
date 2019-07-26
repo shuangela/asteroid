@@ -168,7 +168,7 @@ function newGame() {
   astroid.addImage(astroidsImage);
   astroids.add(astroid);
   }
-  astroids.velocity.x(4);
+  astroids.velocity.x = 4;
   
 //   astroid.position.x = width/4;
   
