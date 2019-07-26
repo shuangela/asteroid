@@ -17,7 +17,7 @@ function setup() {
   spaceshipImage = loadImage('https://i.imgur.com/hNCQhFo.png');
 astroidsImage = loadImage('https://i.imgur.com/s18v4Ay.png');
 
-   spaceship = createSprite(width/2, height/2, 40, 40);
+   spaceship = createSprite(width/5, height/2, 40, 40);
 //   astroid = createSprite(width/2, height/2, 40, 40);
   // spaceship.rotateToDirection = true;
   // spaceship.velocity.x = 4;
@@ -27,13 +27,13 @@ astroidsImage = loadImage('https://i.imgur.com/s18v4Ay.png');
   //astroid.addImage(astroidsImage);
   //
    astroids = new Group();
-  
+
 //   for (var i = 0; i < 5; i++) {
 //     var astroidH = random(0, 600);
 //   var astroidX = random(0, 1200);
 
 //     astroid = createSprite(astroidX, astroidH, 75, 75);
-    
+
 // //   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
 //   astroid.addImage(astroidsImage);
 //   astroids.add(astroid);
@@ -41,8 +41,9 @@ astroidsImage = loadImage('https://i.imgur.com/s18v4Ay.png');
 
   //
   newGame();
-//    gameOver = true;
-//   updateSprites(false);
+  var gameStart = true;
+  gameOver = false;
+  updateSprites(false);
   //
   //camera.position.y = height/2;
 
@@ -65,30 +66,62 @@ function draw() {
 
 
   if(gameOver) {
+  spaceship.remove();
+  for(var i = 0; i<astroids.length; i++) {
+    astroids[i].remove();
+
+    }
    background("#000000");
    fill("#ffffff");
    textAlign(CENTER);
    text('GAME OVER', width/30, 20 );
-   text(' Press "c" to try again');
-   if (keyWentDown(c)){
+   text(' Press "c" to try again', width/3, 30);
+   if (keyWentDown('c')){
      newGame();
   }
-   
+
   }
 
   if(!gameOver) {
+    if (spaceship.position.y < 590 && spaceship.position.y > 10) {
     if(keyDown(38)) {
       spaceship.position.y -= UP;
-      
-    
+
+
     } else if(keyDown(40)) {
       spaceship.position.y += DOWN;
-    
+
     } else {
       spaceship.position.y += 0;
-    
-    
-    } if (spaceship.overlap(astroids)) {
+
+
+    }
+
+  }
+  else if (spaceship.position.y >= 560) {
+    if(keyDown(38)) {
+      spaceship.position.y = 560;
+
+
+    } else if(keyDown(40)) {
+      spaceship.position.y -= UP;
+
+    }
+  }
+
+  else if (spaceship.position.y <= 40) {
+    if(keyDown(38)) {
+      spaceship.position.y += DOWN;
+
+
+    } else if(keyDown(40)) {
+      spaceship.position.y = 40;
+
+    }
+  }
+
+  // }
+   if (spaceship.overlap(astroids)) {
       score();
       for(var i = 0; i<astroids.length; i++) {
        if(spaceship.overlap(astroids[i])) {
@@ -98,9 +131,9 @@ function draw() {
        }
       }
     }
-   
+
    if (SCORE == 5) {
- gameOver();
+ gameOver = true ;
 }
   }
 
@@ -126,12 +159,12 @@ function draw() {
 //      camera.position.x = spaceship.position.x + width/4;
 
 
-    
+
 //     for(var i = 0; i<5; i++) {
 //       createAstroid();
 //       drawSprite(astroid);
 //     }
-  
+
  drawSprite(spaceship);
  //drawSprites(astroids);
   astroids.draw();
@@ -178,19 +211,22 @@ function newGame() {
   spaceship.position.x = width/5;
   spaceship.position.y = height/2;
   SCORE = 0
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 7; i++) {
     let astroidH = random(0, 600);
   let astroidX = random(600, 1200);
 
     astroid = createSprite(astroidX, astroidH, 75, 75);
-   
-    
+
+
 //   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
   astroid.addImage(astroidsImage);
-   astroid.velocity.x = -4;
+   astroid.velocity.x = random(-3, -6);
   astroids.add(astroid);
   }
-  
+  spaceship = createSprite(width/5, height/2, 40, 40);
+  spaceship.addImage(spaceshipImage);
+   drawSprite(spaceship);
+
   background("#003366");
   fill("#ffffff");
   textAlign(CENTER);
@@ -199,19 +235,20 @@ function newGame() {
 
 
 //   astroid.position.x = width/4;
-  
+
 //   astroid.position.y = height/4;
-  
+
 
 }
 
 function disappear() {
   for(var i = 0; i<astroids.length; i++) {
         if(spaceship.overlap(astroids[i])){
-          
-            
+
+
          astroids[i].remove();
         }
    }
 }
+
 
