@@ -60,7 +60,7 @@ function draw() {
     if(keyDown(38)) 
       spaceship.velocity.y += UP;
     
-    if(keyDown(40)) 
+    else if(keyDown(40)) 
       spaceship.velocity.y -= DOWN;
     
     else {
