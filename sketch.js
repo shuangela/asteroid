@@ -1,5 +1,5 @@
 var spaceship;
-var astroid;
+// var astroid;
 var spaceshipImage, astroidsImage;
 
 var SCORE = 0;
@@ -28,20 +28,21 @@ astroidsImage = loadImage('https://i.imgur.com/cEZZLFv.png');
   //
    astroids = new Group();
   
-  for (var i = 0; i < 5; i++) {
-    var astroidH = random(0, 600);
-  var astroidX = random(0, 1200);
+//   for (var i = 0; i < 5; i++) {
+//     var astroidH = random(0, 600);
+//   var astroidX = random(0, 1200);
 
-    astroid = createSprite(astroidX, astroidH, 75, 75);
+//     astroid = createSprite(astroidX, astroidH, 75, 75);
     
-//   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
-  astroid.addImage(astroidsImage);
-  astroids.add(astroid);
-  }
+// //   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
+//   astroid.addImage(astroidsImage);
+//   astroids.add(astroid);
+//   }
 
   //
-   gameOver = true;
-  updateSprites(false);
+  newGame();
+//    gameOver = true;
+//   updateSprites(false);
   //
   //camera.position.y = height/2;
 
@@ -157,7 +158,16 @@ function newGame() {
   updateSprites(true);
   spaceship.position.x = width/5;
   spaceship.position.y = height/2;
-  
+  for (var i = 0; i < 5; i++) {
+    let astroidH = random(0, 600);
+  let astroidX = random(0, 1200);
+
+   let astroid = createSprite(astroidX, astroidH, 75, 75);
+    
+//   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
+  astroid.addImage(astroidsImage);
+  astroids.add(astroid);
+  }
   
 //   astroid.position.x = width/4;
   
