@@ -103,7 +103,7 @@ function draw() {
 //   }
 
 
-     camera.position.x = spaceship.position.x + width/4;
+//      camera.position.x = spaceship.position.x + width/4;
 
 
     
@@ -112,7 +112,8 @@ function draw() {
 //       drawSprite(astroid);
 //     }
   
- drawSprites;
+ drawSprite(spaceship);
+ drawSprites(astriods);
 
 }
 
