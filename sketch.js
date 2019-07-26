@@ -93,7 +93,7 @@ function draw() {
 //       astroids[i].remove();
 
 //     }
-  }
+//   }
 
 //   if(!) {
 //       var astroidH = random(50, 300);
