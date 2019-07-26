@@ -99,8 +99,11 @@ function draw() {
       createAstroid();
       astroid = drawSprite(a)
     }
+  
+ drawSprite(spaceship);
 
 }
+
 
 function createAstroid() {
   var astroidH = random(0, 600)
