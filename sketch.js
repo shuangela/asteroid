@@ -154,7 +154,7 @@ function newGame() {
   astroids.removeSprites();
   gameOver = false;
   updateSprites(true);
-  spaceship.position.x = width/2;
+  spaceship.position.x = width/5;
   spaceship.position.y = height/2;
   
   
