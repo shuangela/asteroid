@@ -81,18 +81,18 @@ function draw() {
     
     } if (spaceship.overlap(astroids)) {
       score();
-      disappear();
+//       disappear();
     }
   }
 
 
   // get rid of passed asteroids
 
-  for(var i = 0; i<astroids.length; i++) {
-    if(astroids[i].position.x < spaceship.position.x-width/2){
-      astroids[i].remove();
+//   for(var i = 0; i<astroids.length; i++) {
+//     if(astroids[i].position.x < spaceship.position.x-width/2){
+//       astroids[i].remove();
 
-    }
+//     }
   }
 
 //   if(!) {
@@ -166,11 +166,11 @@ function newGame() {
 
 }
 
-function disappear() {
-  for(var i = 0; i<astroids.length; i++) {
-        if(astroids[i] = astroid){
-          astroids[i].remove();
-        }
-  }
-}
+// function disappear() {
+//   for(var i = 0; i<astroids.length; i++) {
+//         if(astroids[i] = astroid){
+//           astroids[i].remove();
+//         }
+//   }
+// }
 
