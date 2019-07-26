@@ -5,7 +5,7 @@ var spaceshipImage, astroidsImage;
 var SCORE = 0;
 var gameOver;
 var UP = 1
-var DOWN = -1
+var DOWN = 1
 
 
 function setup() {
@@ -60,7 +60,7 @@ function draw() {
     if(keyDown(38))
       spaceship.velocity.y += UP;
     if(keyDown(40))
-      spaceship.velocity.y += DOWN;
+      spaceship.velocity.y -= DOWN;
     if (spaceship.overlap(astroids, disappear())) {
       score();
     }
