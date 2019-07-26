@@ -113,7 +113,7 @@ function draw() {
 //     }
   
  drawSprite(spaceship);
- drawSprites(astriods);
+ drawSprites(astroids);
 
 }
 
