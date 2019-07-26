@@ -108,11 +108,11 @@ function draw() {
 function createAstroid() {
   var astroidH = random(0, 600)
   var astroidX = random(0, 1200)
-  var a = createSprite(astroidX, astroidH, 150, 150);
+  astroid = createSprite(astroidX, astroidH, 150, 150);
   var img = loadImage('https://i.imgur.com/cEZZLFv.png');
-  a.addImage(img);
-  astroids.add(a);
-  return a;
+  astroid.addImage(img);
+  astroids.add(astroid);
+  return astroid;
   //drawSprite(a);
   //a.setSpeed(2.5-(type/2), random(360));
   //a.rotationSpeed = 0.5;
