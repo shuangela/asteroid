@@ -91,7 +91,8 @@ function draw() {
 
    for(var i = 0; i<astroids.length; i++) {
      if(astroids[i].position.x < -30){
-       astroids[i].remove();
+       astroids[i].position.x = 1260;
+      astroids[i].position.y = random(0, 600);
 
      }
    }
