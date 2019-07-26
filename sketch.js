@@ -18,11 +18,13 @@ function setup() {
   astroidsImage = loadImage('https://i.imgur.com/cEZZLFv.png');
 
    spaceship = createSprite(width/2, height/2, 40, 40);
+  astroid = createSprite(width/2, height/2, 40, 40);
   // spaceship.rotateToDirection = true;
   // spaceship.velocity.x = 4;
   // spaceship.setCollider('circle', 0, 0, 20);
   // spaceship.maxSpeed = 10;
   spaceship.addImage('normal', spaceshipImage);
+  astroid.addImage('normal', astroidsImage);
   //
    astroids = new Group();
 
