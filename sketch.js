@@ -29,7 +29,7 @@ function setup() {
    astroids = new Group();
 
   //
-   gameOver = true;
+   //gameOver = true;
   updateSprites(false);
   //
   //camera.position.y = height/2;
@@ -136,7 +136,7 @@ function newGame() {
   updateSprites(true);
   spaceship.position.x = width/2;
   spaceship.position.y = height/2;
-  spaceship.velocity.y = 1;
+  
   
   astroid.position.x = width/4;
   
