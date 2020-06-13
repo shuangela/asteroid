@@ -238,7 +238,7 @@ function newGame() {
 
 //   astroid.position.y = height/4;
 
-
+// lalalalala 
 }
 
 function disappear() {
